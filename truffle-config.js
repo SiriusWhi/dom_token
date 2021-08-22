@@ -24,6 +24,15 @@ module.exports = {
       gas: 5000000,
       gasPrice: 25000000000,
       network_id: 42
+    },
+    mumbai: {
+      provider: function() {
+        return new HDWalletProvider(
+          [process.env.MUMBAI_PRIVATE_KEY],
+          process.env.MUMBAI_ENDPOINT
+        );
+      },
+      network_id: 80001
     }
   },
 
