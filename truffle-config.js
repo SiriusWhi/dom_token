@@ -25,6 +25,15 @@ module.exports = {
       gasPrice: 25000000000,
       network_id: 42
     },
+    goerli: {
+      provider: function() {
+        return new HDWalletProvider(
+          [process.env.KOVAN_PRIVATE_KEY],
+          process.env.KOVAN_INFURA_ENDPOINT
+        );
+      },
+      network_id: 5
+    },
     mumbai: {
       provider: function() {
         return new HDWalletProvider(
