@@ -15,7 +15,7 @@ module.exports = {
       network_id: "5777",
     },
     kovan: {
-      provider: function() {
+      provider: function () {
         return new HDWalletProvider(
           [process.env.KOVAN_PRIVATE_KEY],
           process.env.KOVAN_INFURA_ENDPOINT
@@ -26,16 +26,18 @@ module.exports = {
       network_id: 42
     },
     goerli: {
-      provider: function() {
+      networkCheckTimeout: 100000,
+      provider: function () {
         return new HDWalletProvider(
-          [process.env.KOVAN_PRIVATE_KEY],
-          process.env.KOVAN_INFURA_ENDPOINT
+          [process.env.GOERLI_PRIVATE_KEY],
+          process.env.GOERLI_INFURA_ENDPOINT
         );
       },
       network_id: 5
     },
     mumbai: {
-      provider: function() {
+      networkCheckTimeout: 100000,
+      provider: function () {
         return new HDWalletProvider(
           [process.env.MUMBAI_PRIVATE_KEY],
           process.env.MUMBAI_ENDPOINT
